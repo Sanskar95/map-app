@@ -9,10 +9,12 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import {Link} from "react-router-dom";
-import FormatAlignJustifyIcon from "@material-ui/icons/FormatAlignJustify";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import MapIcon from '@material-ui/icons/Map';
+import HomeIcon from '@material-ui/icons/Home';
+import PlaceIcon from '@material-ui/icons/Place';
 
 const Layout = () => {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -39,7 +41,7 @@ const Layout = () => {
           >
             <ListItem button onClick={() => toggleDrawer()}>
               <ListItemIcon>
-                <FormatAlignJustifyIcon />
+                <PlaceIcon />
               </ListItemIcon>
               <ListItemText primary={"Create Place"} />
             </ListItem>
@@ -50,17 +52,43 @@ const Layout = () => {
           >
             <ListItem button onClick={() => toggleDrawer()}>
               <ListItemIcon>
-                <FormatAlignJustifyIcon />
+                <MapIcon />
               </ListItemIcon>
               <ListItemText primary={"Go to map"} />
             </ListItem>
           </Link>
+          <Link
+              to={"/"}
+              style={{ textDecoration: "none" }}
+          >
+            <ListItem button onClick={() => toggleDrawer()}>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Home"} />
+            </ListItem>
+          </Link>
+
+          <Link
+              to={"/remove-place"}
+              style={{ textDecoration: "none" }}
+          >
+            <ListItem button onClick={() => toggleDrawer()}>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Remove Place"} />
+            </ListItem>
+          </Link>
+
+
+
         </List>
     );
   }
     return (
     <div>
-      <AppBar position="sticky" style={{background: 'red'}}>
+      <AppBar position="sticky" style={{background: '#008080'}}>
         <Toolbar>
           <IconButton
             edge="start"

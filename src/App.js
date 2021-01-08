@@ -5,6 +5,7 @@ import { Route, BrowserRouter } from "react-router-dom";
 import MapScreen from "./screens/MapScreen";
 import HomeScreen from "./screens/HomeScreen";
 import PlaceCreateScreen from "./screens/PlaceCreateScreen";
+import RemovePlaceScreen from "./screens/RemovePlaceScreen";
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
                 exact
                 path="/create-place"
                 component={PlaceCreateScreen}
+            />
+            <Route
+                exact
+                path="/remove-place"
+                component={RemovePlaceScreen}
             />
         </BrowserRouter>
       </div>
